@@ -8,7 +8,17 @@ var Todos = require('./controller.js')
 router.get('/', Todos.getTodo);
 
 //CANCELLA COSE DA FARE
-router.delete('/', Todos.deleteTodo);
+router.delete('/id/:id', Todos.deleteTodo);
+
+//CREO UNA COSA DA FARE
+router.post('/', Todos.createTodo);
+
+//DETTAGLIO DI UNA COSA DA FARE
+router.get('/id/:id', Todos.dettaglioTodo);
+
+//AGGIORNA UTENTE
+router.put('/id/:id', Todos.updateTodo);
+
 
 
 module.exports = router;

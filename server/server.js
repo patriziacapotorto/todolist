@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express(); //lancio express
 var path = require('path');
-var bodyparser = require('body-parser');
+
 
 var mongoose = require('mongoose');
 require('./config/database.js')(mongoose);
