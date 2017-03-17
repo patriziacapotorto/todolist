@@ -13,10 +13,11 @@ var getTodo = function(req,res){
 
 var createTodo = function(req,res){
   var newTodo = new Todos(req.body);
-  newTodo.save().then(function (data) {
-  res.status(200).send(data);
-  }).catch(function (err) {
-  res.status(500).send(err);
+  newTodo.save().then(function(data){
+    res.status(200).json(data);
+  })
+  .catch(function (err) {
+  res.status(500).json(err);
   });
 };
 

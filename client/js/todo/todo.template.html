@@ -1,1 +1,25 @@
-<h1>{{titolo}}</h1>
+<h1>LISTA COSE DA FARE</h1>
+<div class="row">
+  <div class="col-sm-12 col-md-8">
+    <form ng-submit="crea()">
+        <div class="form-group">
+            <label for="titolo">Titolo</label>
+            <input ng-model="nuovo.titolo" type="text" class="form-control" id="titolo"
+             placeholder="inserire il titolo">
+            <label for="descrizione">Descrizione</label>
+            <input ng-model="nuovo.descrizione" type="text" class="form-control" id="descrizione"
+            placeholder="inserire la descrizione">
+        </div>
+        <button class="btn btn-success">Crea</button>
+      </form>
+      </div>
+      </div>
+    </div>
+<div class="row">
+  <div class="col-sm-12 col-md-8" ng-repeat="el in lista">
+    <p><input type="checkbox" ng-checked="el.fatto">
+      <span> {{el.titolo}} : {{el.descrizione}}  <button class="btn btn-danger" ng-click="(elimina(el._id))">Elimina</button></span>
+    </p>
+
+  </div>
+</div>
