@@ -34,9 +34,24 @@ var deleteTodo = function(id){
   });
 }
 
+var updateTodo = function(id,fatto){
+  return $http({
+    url: 'http://localhost:3000/api/todolist/id/'+id,
+    method: 'PUT',
+    data: {
+      fatto:fatto
+    }
+  }).then(function(res){
+    return res.data;
+  }).catch(function(err){
+    return err;
+  });
+}
+
   return{
     getTodo: getTodo,
     nuovoTodo: nuovoTodo,
-    deleteTodo: deleteTodo
+    deleteTodo: deleteTodo,
+    updateTodo: updateTodo
   }
 })

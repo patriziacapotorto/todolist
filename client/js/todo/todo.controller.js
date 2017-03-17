@@ -23,4 +23,13 @@ $scope.elimina = function(id){
   })
 }
 
+$scope.aggiorna = function(id,fatto){
+  TodoSrv.updateTodo(id,fatto).then(function(data){
+    return TodoSrv.getTodo()
+  }).then(function(data){
+    $scope.lista = data;
+  })
+}
+
+
 });

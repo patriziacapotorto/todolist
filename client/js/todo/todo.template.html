@@ -17,9 +17,9 @@
     </div>
 <div class="row">
   <div class="col-sm-12 col-md-8" ng-repeat="el in lista">
-    <p><input type="checkbox" ng-checked="el.fatto">
+    <p><input type="checkbox" ng-checked="el.fatto" ng-model="el.fatto"
+      ng-click="aggiorna(el._id,el.fatto)">
       <span> {{el.titolo}} : {{el.descrizione}}  <button class="btn btn-danger" ng-click="(elimina(el._id))">Elimina</button></span>
     </p>
-
   </div>
 </div>
